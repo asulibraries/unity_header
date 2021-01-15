@@ -7,6 +7,8 @@ A Drupal 8/9 compatible module to apply the Unity Design System header/footer.
 * The site's "Main navigation" menu will be inserted into the header.
 * This module was built for a site using a sub-theme of Bootstrap Barrio. ymmv
 
+Important: This can only handle one level of menu items at the moment. Dropdowns are NOT working.
+
 ## Configuration
 
 * The parent unit URL is hardcoded as a variable in xxx.html.twig.
