@@ -31,17 +31,6 @@ function asu_header_menu_links_discovered_alter(&$links) {
 }
 
 /**
- * Implements hook_preprocess_menu
- *
- * Make username available to menu twigs
- */
-/* don't need this since user.account.name works, keep it for now just in case */
-/*function asu_header_preprocess_menu(&$variables) {
-  $currentAccount = \Drupal::currentUser();
-  $variables['username'] = $currentAccount->getAccountName();
-}*/
-
-/**
  * Implements hook_theme().
  */
 function asu_header_theme($existing, $type, $theme, $path) {
@@ -144,6 +133,16 @@ function asu_header_preprocess_menu(&$variables) {
   catch (Exception $e) {
     $variables['is_front'] = FALSE;
   }
+}
+
+/**
+ * Implements hook_preprocess_menu()
+ * Set the username and not cache it
+ */
+function asu_header_preprocess_menu__asu_global(&$variables) {
+  $currentAccount = \Drupal::currentUser();
+  $variables['username'] = $currentAccount->getAccountName();
+  $variables['#cache']['contexts'][] = 'user';
 }
 
 /**
