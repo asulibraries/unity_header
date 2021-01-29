@@ -21,7 +21,7 @@
 {% import _self as menus %}
 {# TODO: Uncomment first/preferred name when that field is available. For now use account name #}
 {#{% set firstname = drupal_field('field_first_name', 'user', user.id, {label: 'hidden'}) %}#}
-{% set firstname = user.account.name %}
+{% set firstname = username %}
 {#
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
