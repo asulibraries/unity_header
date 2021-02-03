@@ -372,7 +372,7 @@
     color: #191919;
 }
 
-#header-main .navbar-nav .nav-link svg.fa-home {
+#header-main .navbar-nav .nav-link .fa-home {
     display: none;
 }
 
@@ -525,7 +525,7 @@
     border-top: 0;
 }
 
-#header-main .dropdown svg.fa-chevron-down {
+#header-main .dropdown .fa-chevron-down {
     float: right;
     font-size: 1.25rem;
     -webkit-transition: 0.5s cubic-bezier(0.19, 1, 0.19, 1);
@@ -533,7 +533,7 @@
     transition: 0.5s cubic-bezier(0.19, 1, 0.19, 1);
 }
 
-#header-main .dropdown.show svg.fa-chevron-down {
+#header-main .dropdown.show .fa-chevron-down {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
@@ -740,7 +740,7 @@
         padding-bottom: 7px;
         /* Magic number */
     }
-    #header-main .navbar-nav > .nav-link-home svg.fa-home {
+    #header-main .navbar-nav > .nav-link-home .fa-home {
         display: inline-block;
         font-size: 16px;
     }
@@ -784,7 +784,7 @@
         width: 100%;
         margin-left: 0;
     }
-    #header-main .dropdown svg.fa-chevron-down {
+    #header-main .dropdown .fa-chevron-down {
         float: none;
         display: inline-block;
         font-size: 0.75rem;
