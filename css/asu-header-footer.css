@@ -51,10 +51,10 @@
 7. Main Menu, Desktop
 8. Page Content
 --------------------------------------------------------------*/
-.dropdown-pinned {
+/*.dropdown-pinned {
     overflow: hidden;
     position: fixed;
-}
+}*/
 
 /*--------------------------------------------------------------
 2. Top Menu
@@ -308,8 +308,21 @@
     outline: 0;
 }
 
+#header-main .navbar-toggler .fa-stack {
+    width: 0.875em;
+    height: 1em;
+}
+
 #header-main .navbar-toggler .fa-circle {
     color: #e8e8e8;
+    font-size: 1rem;
+    margin-left: -12px;
+    /* Magic number, align icon with hamburger */
+}
+
+#header-main .navbar-toggler .fa-times {
+    margin-left: -5px;
+    /* Magic number, same thing */
 }
 
 #header-main .navbar-toggler.collapsed .fa-stack {
