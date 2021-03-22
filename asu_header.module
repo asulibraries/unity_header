@@ -124,26 +124,31 @@ function asu_header_preprocess_block__system_menu_block__main(&$variables) {
 
 /**
  * Implements hook_preprocess_*()
- * Pass is_front to menu template
+ * TODO: Count the number of nolink headings in the menu
+ * and pass that as a variable to the menu so we can alter
+ * the HTML for >2 columns.
  */
 function asu_header_preprocess_menu(&$variables) {
+  /* Pass is_front variable to menu templates */
   try {
     $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
   }
   catch (Exception $e) {
     $variables['is_front'] = FALSE;
   }
+  $variables['#cache']['contexts'][] = 'url.path.is_front';
+
+  /* Set is_active on item if the link matches current path */
+  $current_path = \Drupal::request()->getRequestUri();
+  foreach ($variables['items'] as &$item) {
+    if ($item['in_active_trail']) {
+      if ($item['url']->toString() == $current_path) {
+        $item['is_active'] = TRUE;
+      }
+    }
+  }
 }
 
-/**
- * Implements hook_preprocess_menu()
- * Set the username and not cache it
- */
-function asu_header_preprocess_menu__asu_global(&$variables) {
-  $currentAccount = \Drupal::currentUser();
-  $variables['username'] = $currentAccount->getAccountName();
-  $variables['#cache']['contexts'][] = 'user';
-}
 
 /**
  * Implements hook_preprocess_*()

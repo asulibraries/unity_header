@@ -39,6 +39,16 @@
     width: 1px;
 }
 
+/* Not sure what this style in global_header.scss is supposed
+   to accomplish but all it does is make long pages not scroll
+   and shoots all the content to the left.
+   Overriding until/unless it's needed.
+ */
+body.dropdown-pinned {
+  overflow: auto;
+  position: initial;
+}
+
 /*--------------------------------------------------------------
 # Global Header
 
@@ -325,6 +335,34 @@
     /* Magic number, same thing */
 }
 
+#header-main .svg-inline--fa.fa-w-14 {
+  width: .875em;
+}
+
+#header-main .svg-inline--fa {
+  font-size: inherit;
+  height: 1em;
+  vertical-align: -.125em;
+}
+
+#header-main .svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+#header-main .svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+
+#header-main .svg-inline--fa.fa-stack-1x,
+#header-main .svg-inline--fa.fa-stack-2x {
+  bottom: 0;
+  margin: auto;
+  right: 0;
+  top: 0;
+}
+
 #header-main .navbar-toggler.collapsed .fa-stack {
     display: none;
 }
@@ -594,6 +632,23 @@
 
 #header-main .dropdown-menu .btn {
     margin: 0.5rem 0;
+}
+
+#header-main .btn.nav-link {
+  font-weight: normal;
+  border-radius: 0;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+#header-main .btn.nav-link:hover,
+#header-main .btn.nav-link:focus {
+  transform: none;
+}
+
+#header-main .dropdown-toggle:after {
+  border: none;
 }
 
 #header-main .dropdown-menu div[class^='col-'] {

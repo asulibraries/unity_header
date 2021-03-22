@@ -7,7 +7,7 @@ A Drupal 8/9 compatible module to apply the Unity Design System header/footer.
 * The site's "Main navigation" menu will be inserted into the header.
 * This module was built for a site using a sub-theme of Bootstrap Barrio. ymmv
 
-Important: This can only handle one level of menu items at the moment. Dropdowns are NOT working.
+Important: Per Bootstrap and Web Standards 2.0 sites are only allowed 2 levels of links in the menu.
 
 ## Configuration
 
@@ -16,6 +16,15 @@ Important: This can only handle one level of menu items at the moment. Dropdowns
 * Barrio subtheme config:
   * Layout > Region > Top Header, Header, and Footer fifth regions should all have "no wrapper" checked and no class set (the default is row).
   * A custom page.html.twig file is included for comparison. Any template in the theme will override this module's templates.
+  
+## Menu configuration
+
+Because of the 2-level limit and to get the desired layout, the module requires menu elements to be set up a certain way.
+* Menu items that are links can be regular links.
+* Menu items that are dropdown triggers must have `route:<button>` set as the link.
+* Menu items that are headers within dropdowns must have `<nolink>` set as the link.
+
+Note: At this time, the modules supports only 1- or 2-column dropdowns.
   
 ## Block placement
 
