@@ -71,11 +71,11 @@ jQuery(document).ready(function ($) {
 
   function recordTopValue() {
     topValue = $(document).scrollTop();
-    $('body').addClass('dropdown-pinned');
+    $('#asu-header').closest('body').addClass('dropdown-pinned');
   }
 
   function restoreTopValue() {
-    $('body').removeClass('dropdown-pinned');
+    $('#asu-header').closest('body').removeClass('dropdown-pinned');
     topValue = $(document).scrollTop(topValue);
   }
 
