@@ -26,13 +26,16 @@ Because of the 2-level limit and to get the desired layout, the module requires 
 
 Note: At this time, the modules supports only 1- or 2-column dropdowns.
   
-## Block placement
+## Block placement and configuration
 
 ASU Global Menu block into the Top Header region.
 
 Main navigation block into the Header region.
+Check the "Expand all menu items" box in the block settings for the main navigation block.
 
 Universal Footer block into the Footer fifth region.
+
+Uncheck the "Display title" box on all of these blocks.
 
 ## Troubleshooting
 
