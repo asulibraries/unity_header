@@ -166,3 +166,10 @@ function asu_header_preprocess_menu(&$variables) {
 //  $variables['site_slogan'] = $config->get('slogan');
 //
 //}
+
+
+function asu_header_block_build_alter(array &$build, \Drupal\Core\Block\BlockPluginInterface $block) {
+  if ($block->getPluginId() === "system_menu_block:asu_global") {
+    $build['#cache']['contexts'][] = 'user';
+  }
+}
