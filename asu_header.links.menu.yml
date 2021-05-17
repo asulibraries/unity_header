@@ -22,7 +22,7 @@ asu_header.item:
         - sr-only-focusable
 asu_header.item2:
   title: 'ASU Home'
-  description: 'ASU home'
+  description: 'ASU Home'
   url: https://asu.edu
   weight: 300
   menu_name: asu_global
@@ -34,7 +34,7 @@ asu_header.item3:
   menu_name: asu_global
 asu_header.item4:
   title: 'Colleges and Schools'
-  description: 'Colleges and schools'
+  description: 'Colleges and Schools'
   url: https://asu.edu/about/colleges-and-schools
   weight: 500
   menu_name: asu_global
