@@ -27,7 +27,7 @@
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
 {{ menus.menu_links(items, firstname, attributes, 0) }}
-
+{% set cur_path = url('<current>') %}
 {% macro menu_links(items, firstname, attributes, menu_level) %}
   {% import _self as menus %}
   {% if items %}
@@ -41,8 +41,12 @@
       {# Add the user and some markup to the login/out link #}
       {% if loop.last %}
         <span class="nav-link login-status">
-          {{ link(firstname, item.url, {'class': 'name'}) }}
-          {{ link(item.title, item.url, {'class': 'signout'}) }}
+        {{ link(firstname, item.url, {'class': 'name'}) }}
+        {% if item.url.toString() == "/user/logout" %}
+          <a href="{{path('user.logout', {}, {'query': {'destination': path('<current>') }})}}" class="signout">{{item.title}}</a>
+        {% else %}
+          <a href="{{path('user.login', {}, {'query': {'destination': path('<current>') }})}}" class="signout">{{item.title}}</a>
+        {% endif %}
         </span>
       {% else %}
         {{ link(item.title, item.url, {'class': link_classes}) }}
