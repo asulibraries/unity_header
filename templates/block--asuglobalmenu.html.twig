@@ -54,8 +54,8 @@
   {% block content %}
     {{ content }}
     <form class="form-inline" action="https://search.asu.edu/search" method="get" name="gs">
-      <input class="form-control" type="search" name="q" aria-labelledby="header-top-search" required>
-      <label id="header-top-search">Search ASU</label>
+      <input class="form-control" type="search" name="q" id="header-top-search" required>
+      <label for="header-top-search">Search ASU</label>
       <input name="site" value="default_collection" type="hidden">
       <input name="sort" value="date:D:L:d1" type="hidden">
       <input name="output" value="xml_no_dtd" type="hidden">

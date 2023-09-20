@@ -39,7 +39,6 @@
       {# Add the user and some markup to the login/out link #}
       {% if loop.last %}
         <span class="nav-link login-status">
-        {{ link(firstname, item.url, {'class': 'name'}) }}
         {% if item.url.toString() == "/user/logout" %}
           <a href="{{path('user.logout', {}, {'query': {'destination': path('<current>') }})}}" class="signout">{{item.title}}</a>
         {% else %}
