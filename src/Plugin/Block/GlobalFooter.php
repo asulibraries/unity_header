@@ -3,6 +3,7 @@
 namespace Drupal\asu_header\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Cache\Cache;
 
 /**
  * Provides a block for the ASU universal footer
@@ -27,6 +28,9 @@ class GlobalFooter extends BlockBase {
           'asu_header/header-footer',
         ],
       ],
+      '#cache' => [
+          'max-age' => Cache::PERMANENT,
+      ]
     ];
   }
 
