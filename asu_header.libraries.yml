@@ -1,5 +1,5 @@
 header-footer:
-  version: 1.x
+  version: VERSION
   css:
     component:
       css/asu-header-footer.css: {}
